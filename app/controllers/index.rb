@@ -10,3 +10,13 @@ post '/' do
   redirect '/'
 end
 
+get '/:id/edit' do
+  @note = Note.find(params[:id])
+  erb :edit
+end
+
+put '/:id' do
+  note = Note.find(params[:id])
+  note.update_attributes(title: params[:title], content: params[:content])
+  redirect '/'
+end

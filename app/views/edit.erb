@@ -1,0 +1,16 @@
+<div class="container">
+<h1> Edit <%= @note.title %></h1>
+
+<% if @note %>
+  <form action="/<%= @note.id %>" method="post" id="edit">
+  <input type="hidden" name="_method" value="put">
+  Title: <textarea name="title"><%=@note.title %></textarea>
+  <br><br>
+  Note: <textarea name="content"><%=@note.content %></textarea>
+  <br><br>
+  <button>Edit this note</button>
+  <br>
+</form>
+
+<% end %>
+</div>
