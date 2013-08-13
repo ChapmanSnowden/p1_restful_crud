@@ -20,3 +20,14 @@ put '/:id' do
   note.update_attributes(title: params[:title], content: params[:content])
   redirect '/'
 end
+
+get '/:id/delete' do
+  @note = Note.find(params[:id])
+  erb :delete
+end
+
+delete '/:id' do
+  note = Note.find(params[:id])
+  note.destroy
+  redirect '/'
+end

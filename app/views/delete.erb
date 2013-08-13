@@ -1,0 +1,16 @@
+<div class = "container">
+<h1> Edit Your Note <%= @note.title %></h1>
+
+<% if @note %>
+  <p><strong> Are you sure you want to delete <em><%= @note.title %></em> ? </strong></p>
+  <form action="/<%= @note.id %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+<!--     <br><br> -->
+    <button>I'm sure, waste this fool!</button>
+    <br><br>
+    <button><a href="/">Nope, let him live!</a></button>
+    <br><br>
+  </form>
+<% end %>
+
+</div>
