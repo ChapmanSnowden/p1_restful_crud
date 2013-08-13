@@ -14,3 +14,14 @@
   </form>
 </div>
 
+<% @notes.each do |note| %>
+  <p>
+  <br>
+  <em><%= note.title %></em>
+  <span><a href="/<%= note.id%>/edit">[edit]</a></span>
+  <span><a href="/<%= note.id%>/delete">[delete]</a></span>
+  </p>
+    <p>
+    <%= note.content %>
+    </p>
+<% end %>
